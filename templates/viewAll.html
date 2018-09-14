@@ -1,0 +1,52 @@
+<!-- content set for viewAll -->
+
+<div class="container" id="product-category">
+    <!-- <ul class="breadcrumb">
+        <li><a href=""><i class="glyphicon glyphicon-home"></i></a></li>
+        <li><a href="">Laptops &amp; Notebooks</a></li>
+    </ul> -->
+    <aside id="column-left" class="col-sm-3 hidden-xs paddingLeft0 productCatBar">
+        <div class="list-group">
+            <a ng-href="" class="list-group-item textCapital" ng-repeat="productCategory in products" ng-click="getFilterData(productCategory, $index)" ng-class="{active: $index === selectedIndex}">{{productCategory.category}}
+                ({{productCategory.lists.length}})</a>
+        </div>
+        <div class="swiper-viewport">
+            <div id="banner0" class="swiper-container swiper-container-horizontal swiper-container-fade">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide-active" style="width: 254px; opacity: 1; transform: translate3d(0px, 0px, 0px);"><a
+                            href=""><img src="" alt="" class="img-responsive"></a></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div id="content" class="col-sm-9">
+        <div class="row">
+            <div class="product-layout col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in selectedProduct.lists | filter:searchProduct">
+                <div class="product-thumb transition">
+                    <div class="image"><a href=""><img ng-src="{{product.image_url}}" alt="{{product.name}}" ng-model="productImage" class="img-responsive margin0auto"></a></div>
+                    <div class="caption">
+                        <h4><a href="#">{{product.name}}</a></h4>
+                        <p>
+                            {{product.description}}..</p>
+                        <div class="price-wrap h5">
+                            <span class="price-new">${{product.disc_price}}</span> <del class="price-old">${{product.mrp_price}}</del>
+                        </div>
+                        <div class="rating-wrap">
+                            <div class="label-rating">{{product.reviews}} reviews</div>
+                            <div class="label-rating">{{product.no_orders}} orders </div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" ng-click="addItem(product)"><i class="glyphicon glyphicon-shopping-cart"></i>
+                            <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                        <button type="button" data-toggle="tooltip" data-original-title="Add to Wish List"><i class="glyphicon glyphicon-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-left"></div>
+            <div class="col-sm-6 text-right">Showing 1 to 5 of 5 (1 Pages)</div>
+        </div>
+    </div>
+</div>

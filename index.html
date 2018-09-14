@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Rainbow Drops</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <style>
+
+    </style>
+</head>
+
+<body ng-app="rainbowApp" ng-controller="rainbowAppCtrl">
+    <div class="navbar-wrapper">
+        <div class="">
+            <nav class="navbar navbar-light navbar-fixed-top" id="top">
+                <div class="container">
+                    <div id="top-links" class="nav pull-right">
+                        <ul class="list-inline">
+                            <li><a href=""><i class="glyphicon glyphicon-earphone"></i></a>
+                                <span class="hidden-xs hidden-sm hidden-md">+91 96XXXXXXXX</span></li>
+                            <li class="dropdown"><a href="" title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i
+                                        class="glyphicon glyphicon-user"></i>
+                                    <span class="hidden-xs hidden-sm hidden-md">My
+                                        Account</span> <span class="caret"></span></a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="">Register</a></li>
+                                    <li><a href="">Login</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="" id="wishlist-total"><i class="glyphicon glyphicon-heart"></i>
+                                    <span class="hidden-xs hidden-sm hidden-md">Wish
+                                        List (0)</span></a></li>
+                            <li><a href="" title="Shopping Cart"><i class="glyphicon glyphicon-shopping-cart"></i>
+                                    <span class="hidden-xs hidden-sm hidden-md">Shopping
+                                        Cart</span></a></li>
+                            <li><a href="" title="Checkout"><i class="glyphicon glyphicon-share-alt"></i>
+                                    <span class="hidden-xs hidden-sm hidden-md">Checkout</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row marginTop60">
+            <div class="col-sm-4">
+                <div id="logo">
+                    <h1><a ng-href="#" class="textDecoNone">Rainbow Drops</a></h1>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div id="search" class="input-group">
+                    <input type="text" name="search" value="" placeholder="Search" ng-model="searchProduct" class="form-control input-lg">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div id="cart" class="btn-group btn-block" uib-dropdown on-toggle="toggled(open)">
+                    <button type="button" href id="simple-dropdown" uib-dropdown-toggle data-loading-text="Loading..."
+                        class="btn btn-inverse btn-block btn-lg dropdown-toggle">
+                        <i class="glyphicon glyphicon-shopping-cart"></i> <span id="cart-total">{{invoice.items.length}}
+                            item(s) - {{total() | currency}}</span></button>
+                    <ul class="dropdown-menu pull-right" uib-dropdown-menu aria-labelledby="simple-dropdown" ng-if="invoice.items.length != 0">
+                        <li>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr ng-repeat="item in invoice.items" class="invoiceTable">
+
+                                        <td class="text-center">
+                                            <a href=""><img src="{{item.image_url}}" alt="{{item.name}}" class="img-thumbnail"></a>
+                                        </td>
+                                        <td class="text-left"><a href="" class="truncate">{{item.name}}</a> </td>
+                                        <td class="text-right">x {{item.qty}}</td>
+                                        <td class="text-right">{{item.qty * item.disc_price | currency}}</td>
+                                        <td class="text-center"><button type="button" title="Remove" class="btn btn-danger btn-xs"
+                                                ng-click="removeItem($index)"><i class="glyphicon glyphicon-remove"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <div>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-right"><strong>Sub-Total</strong></td>
+                                            <td class="text-right">{{total() | currency}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right"><strong>GST (18%)</strong></td>
+                                            <td class="text-right">{{gst() | currency}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right"><strong>Total</strong></td>
+                                            <td class="text-right">{{grandTotal() | currency}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-right">
+                                    <a href="" ng-click="grandTotal()"><strong><i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;View
+                                            Cart</strong></a>&nbsp;&nbsp;&nbsp;
+                                    <a href=""><strong><i class="glyphicon glyphicon-share-alt"></i>&nbsp;Checkout</strong></a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="dropdown-menu pull-right" uib-dropdown-menu aria-labelledby="simple-dropdown" ng-if="invoice.items.length == 0">
+                        <li><p class="emptyPara">Your Shopping Cart is Empty</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-view="">
+
+        <!-- <script src="js/jquery.min.js"></script> -->
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/angular-animate.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script> -->
+        <script src="js/ui-bootstrap-tpls-2.5.0.js"></script>
+        <script src="js/custom.js"></script>
+        <!-- <script src="js/bootstrap.min.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<div class="navbar-wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default" id="menu">
+                <div class="navbar-header">
+                        <span id="category" class="visible-xs">Categories</span>
+                    <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed" aria-expanded="false">
+                        
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="container-fluid">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed" id="menu_bar">
+                        <ul class="nav navbar-nav">
+                            <li class="textCapital" ng-repeat="productCategory in products track by $index"><a ng-href="#!/viewAll/{{$index}}">{{productCategory.category}}</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+ <!-- Carousel================================================== -->
+    <div class="container slidesContainer">
+        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+            <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
+                <img ng-src="{{slide.image}}" class="img-responsive sliderImg">
+                <div class="carousel-caption">
+                    <!-- <h4>Slide {{slide.id}}</h4> -->
+                    <!-- <p>{{slide.text}}</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.carousel -->
+    <div class="container">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-md-10 col-sm-10 col-xs-10">
+                    <h3>Featured Products <small>We thought you might like...</small></h3>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                    <a ng-href="#!/viewAll/0" class="float-right viewAll" type="button">View all...</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <!-- <div class="col-md-4">
+                <figure class="card card-product">
+                    <div class="img-wrap"><img src="https://s9.postimg.org/4ooze1tof/image.jpg"></div>
+                    <figcaption class="info-wrap">
+                        <h4 class="title">Product name goes here</h4>
+                        <p class="desc">Some small description goes here</p>
+                        <div class="rating-wrap">
+                            <div class="label-rating">132 reviews</div>
+                            <div class="label-rating">154 orders </div>
+                        </div>
+                    </figcaption>
+                    <div class="bottom-wrap">
+                        <a href="" class="btn btn-primary float-right">Order Now</a>
+                        <div class="price-wrap h5">
+                            <span class="price-new">$1280</span> <del class="price-old">$1980</del>
+                        </div>
+                    </div>
+                </figure>
+            </div> -->
+            <div ng-repeat="productContainer in products | limitTo: 1">
+                <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="product in productContainer.lists | limitTo: 4">
+                    <!-- {{products.lists.name}} -->
+                    <div class="product-thumb transition">
+
+                        <div class="image"><a href=""><img ng-src="{{product.image_url}}" alt="{{product.name}}" class="img-responsive margin0auto"></a></div>
+                        <div class="caption">
+                            <h4><a href="#">{{product.name}}</a></h4>
+                            <p>
+                                {{product.description}}..</p>
+                            <div class="price-wrap h5">
+                                <span class="price-new">${{product.disc_price}}</span> <del class="price-old">${{product.mrp_price}}</del>
+                            </div>
+                            <div class="rating-wrap">
+                                <div class="label-rating">{{product.reviews}} reviews</div>
+                                <div class="label-rating">{{product.no_orders}} orders </div>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" ng-click="addItem(product)"><i class="glyphicon glyphicon-shopping-cart"></i>
+                                <span class="hidden-xs hidden-sm hidden-md">Add to Cart</span></button>
+                            <button type="button" data-toggle="tooltip" data-original-title="Add to Wish List"><i class="glyphicon glyphicon-heart"></i></button>
+                            <!-- <button type="button" data-toggle="tooltip" title="" onclick="compare.add('43');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row.// -->
+    </div>
+    <footer class="footer" style="margin-top: 30px;">
+            <div class="container">
+                <p class="text-muted text-center">2018@ Rainbow D rops</p>
+            </div>
+        </footer>

@@ -1,0 +1,177 @@
+[{
+        "category": "decor & hobbies",
+        "lists": [{
+                "id": 1,
+                "name": "Red Wreath Hanger 29.5cm",
+                "image_url": "images/decor1.jpg",
+                "description": "2 years",
+                "mrp_price": 300,
+                "disc_price": 256,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 2,
+                "name": "White Cotton Stem 66cm",
+                "image_url": "images/decor2.jpg",
+                "description": "2 years",
+                "mrp_price": 265,
+                "disc_price": 246,
+                "reviews": 2,
+                "no_orders": 87
+            },
+            {
+                "id": 3,
+                "name": "Wooden Snowflake Gift Box 16.5cm",
+                "image_url": "images/decor3.jpg",
+                "description": "2 years",
+                "mrp_price": 45000,
+                "disc_price": 100,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 4,
+                "name": "Nickel Lantern 34cm",
+                "image_url": "images/decor4.jpg",
+                "description": "2 years",
+                "mrp_price": 4000,
+                "disc_price": 3066,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 5,
+                "name": "Fresh Embossed Clear Glass Jar 118ml 4 Pack",
+                "image_url": "images/decor5.jpg",
+                "description": "2 years",
+                "mrp_price": 500,
+                "disc_price": 491,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 6,
+                "name": "White Wash Lantern 20cm",
+                "image_url": "images/decor6.jpg",
+                "description": "2 years",
+                "mrp_price": 500,
+                "disc_price": 491,
+                "reviews": 52,
+                "no_orders": 99
+            }
+        ]
+    },
+    {
+        "category": "papercraft",
+        "lists": [{
+                "id": 7,
+                "name": "Paper-Rainbow-Kid-Craft",
+                "image_url": "images/paper1.jpg",
+                "description": "2 years",
+                "mrp_price": 599,
+                "disc_price": 499,
+                "reviews": 65,
+                "no_orders": 100
+            },
+            {
+                "id": 8,
+                "name": "Rainbow-Paper-Craft",
+                "image_url": "images/paper2.jpg",
+                "description": "2 years",
+                "mrp_price": 700,
+                "disc_price": 654,
+                "reviews": 22,
+                "no_orders": 150
+            },
+            {
+                "id": 9,
+                "name": "Cosmic Shimmer Cherry Red Holographic Glitterbitz 25ml",
+                "image_url": "images/paper3.jpg",
+                "description": "2 years",
+                "mrp_price": 300,
+                "disc_price": 256,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 10,
+                "name": "Creative Expressions Butterfly Splash Mini Stencil",
+                "image_url": "images/paper4.jpg",
+                "description": "2 years",
+                "mrp_price": 200,
+                "disc_price": 184,
+                "reviews": 52,
+                "no_orders": 99
+            }
+        ]
+    },
+    {
+        "category": "baking",
+        "lists": [{
+                "id": 11,
+                "name": "Dr. Oetker Banana Choc Chip Bake in the Box",
+                "image_url": "images/baking1.jpg",
+                "description": "2 years",
+                "mrp_price": 370,
+                "disc_price": 100,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 12,
+                "name": "CA Sprinkles",
+                "image_url": "images/baking2.jpg",
+                "description": "2 years",
+                "mrp_price": 300,
+                "disc_price": 246,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 13,
+                "name": "Cake Angels Pink and White Mini Marshmallows 150g",
+                "image_url": "images/baking3.jpg",
+                "description": "2 years",
+                "mrp_price": 200,
+                "disc_price": 184,
+                "reviews": 52,
+                "no_orders": 99
+            }
+        ]
+    },
+    {
+        "category": "kids",
+        "lists": [{
+                "id": 14,
+                "name": "Colour In Cardboard Igloo 107cm",
+                "image_url": "images/kids1.jpg",
+                "description": "2 years",
+                "mrp_price": 1500,
+                "disc_price": 1400,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 15,
+                "name": "Mixed Tassels 8 Pack",
+                "image_url": "images/kids2.jpg",
+                "description": "2 years",
+                "mrp_price": 200,
+                "disc_price": 180,
+                "reviews": 52,
+                "no_orders": 99
+            },
+            {
+                "id": 16,
+                "name": "Ice Cream Pom Pom Kit 2 Pack",
+                "image_url": "images/kids3.jpg",
+                "description": "2 years",
+                "mrp_price": 400,
+                "disc_price": 300,
+                "reviews": 52,
+                "no_orders": 99
+            }
+        ]
+    }
+]
